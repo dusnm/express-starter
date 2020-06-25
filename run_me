@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# Copyright (C) 2020 Dusan Mitrovic <dusan@dusanmitrovic.xyz>
+# Licensed under the terms of the GNU GPL v3 only
+#
+# Script used to automate the initial configuration process
+[ ! -f $(which node) ] && echo "Cannot find node binary, exiting!" && exit 1
+[ ! -f $(which npm) ] && echo "Cannot find npm binary, exiting!" && exit 1
+
+echo "Installing dependencies."
+npm install
+echo "Copying .env file"
+cp .env.example .env
+echo "Initial setup done."
+echo "Adjust the configuration to match your environment by editing the .env file."
+echo "Run the app with the following command:"
+echo "npm run dev"

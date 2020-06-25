@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{#if css}}
+        {{#each css}}
+        <link rel="stylesheet" href="/static/css/{{this}}">
+        {{/each}}
+    {{/if}}
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>{{ title }}</title>
+</head>
+<body>
+    {{{ body }}}
+    {{#if js}}
+        {{#each js}}
+        <script src="/static/js/{{this}}"></script>
+        {{/each}}
+    {{/if}}
+    <!-- Main JS File -->
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
